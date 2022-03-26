@@ -1,21 +1,23 @@
-//Crear una lista de alumnos
 
-let alumnos = prompt("Ingrese el nombre del alumno (si es alumno) o indique si es profesor");
-let ingresados = "";
+//2DO DESAFIO
 
-while (alumnos != "profesor"){
-    ingresados += alumnos + "\n";
-    alumnos = prompt("Ingresar el nombre del siguiente alumno")
+
+alert("Bienvenido, para solicitar su prestamo ingrese aceptar");
+
+let cuotas = parseInt(prompt("Ingrese la cantidad de cuotas en las que desea pagar el prestamo (Maximo 36 cuotas)."));
+
+function iva (total){
+    if(cuotas <= 12){
+        alert("Usted debe pagar de prestamo: " + (total * 1.5));
+    }else if(cuotas >= 13 && cuotas <= 24){
+        alert("Usted debe pagar de prestamo: " + (total * 1.8));
+    }else if (cuotas >= 25 && cuotas <=36){
+        alert("Usted debe pagar de prestamo: " + (total * 2));
+    }else{
+        alert("Usted solicito una cantidad de cuotas no disponible");
+    }
 }
-alert(ingresados);
 
+let monto = parseInt(prompt("Ingrese un monto que desea solicitar como prestamo"));
 
-
-
-//Tabla
-
-let numeroTabla = parseInt(prompt("Ingrese la tab,a de que numero desea saber"));
-
-for (let variable = 0; variable <= 10; variable++){
-    console.log("Multiplicamos: " + numeroTabla + "x" + variable + " = " + numeroTabla * variable);
-}
+iva(monto);
