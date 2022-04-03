@@ -1,23 +1,53 @@
 
-//2DO DESAFIO
+//3ER DESAFIO
+
+//!! en el simulador de prestamos, hacer que el usuario elija una opcion de 3 o 4, que tengan el valor del prestamos que entregamos, e indique las cuotas y el valor a devolver.
 
 
-alert("Bienvenido, para solicitar su prestamo ingrese aceptar");
+let cuotas = [];
 
-let cuotas = parseInt(prompt("Ingrese la cantidad de cuotas en las que desea pagar el prestamo (Maximo 36 cuotas)."));
-
-function iva (total){
-    if(cuotas <= 12){
-        alert("Usted debe pagar de prestamo: " + (total * 1.5));
-    }else if(cuotas >= 13 && cuotas <= 24){
-        alert("Usted debe pagar de prestamo: " + (total * 1.8));
-    }else if (cuotas >= 25 && cuotas <=36){
-        alert("Usted debe pagar de prestamo: " + (total * 2));
-    }else{
-        alert("Usted solicito una cantidad de cuotas no disponible");
+class Banco {
+    constructor(monto, cuota, devolucion){
+        this.monto = monto;
+        this.cuota = cuota;
+        this.devolucion = devolucion;
     }
 }
 
-let monto = parseInt(prompt("Ingrese un monto que desea solicitar como prestamo"));
+const opcion1 = new Banco("10000", "12", "12000");
+cuotas.push(opcion1);
 
-iva(monto);
+const opcion2 = new Banco("20000", "24", "25000");
+cuotas.push(opcion2);
+
+const opcion3 = new Banco("30000", "36", "40000");
+cuotas.push(opcion3);
+
+
+
+console.log("Estos son los prestamos que brindamos: ");
+for(let prestamos of cuotas){
+    console.log("el valor del prestamo es de " + prestamos.monto + ", las cuotas son de " + prestamos.cuota + 
+     ", y el monto a devoler es de " + prestamos.devolucion);
+}
+
+
+let usuario = prompt("Escriba el monto que desee de prestamo");
+for(let prestamos of cuotas){
+    
+    if(usuario == prestamos.monto){
+        alert("el monto que deve devolver es de " + prestamos.devolucion);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
