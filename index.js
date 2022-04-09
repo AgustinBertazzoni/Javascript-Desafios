@@ -1,7 +1,6 @@
+// 4TO DESAFIO
 
-//3ER DESAFIO
 
-//!! en el simulador de prestamos, hacer que el usuario elija una opcion de 3 o 4, que tengan el valor del prestamos que entregamos, e indique las cuotas y el valor a devolver.
 
 
 let cuotas = [];
@@ -15,16 +14,53 @@ class Banco {
 }
 
 const opcion1 = new Banco("10000", "12", "12000");
-cuotas.push(opcion1);
-
 const opcion2 = new Banco("20000", "24", "25000");
-cuotas.push(opcion2);
-
 const opcion3 = new Banco("30000", "36", "40000");
-cuotas.push(opcion3);
+
+
+cuotas.push(opcion1, opcion2, opcion3);
+
+
+const prestamos = () => {
+    cuotas.forEach((cuota) => {
+        console.log(`El valor del prestamo es de: $${cuota.monto} y el valor a devolver es de: $${cuota.devolucion}`);
+    });
+};
+
+
+const valorFinal = () => {
+    let usuario = prompt("Ingrese el valor del prestamo que desea");
+    for(const cuota of cuotas){
+    
+        if(usuario == cuota.monto){
+           console.log(`El valor que tiene que devolver es de: $${cuota.devolucion}`);
+        }
+    }
+}
+
+
+prestamos();
+valorFinal();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 console.log("Estos son los prestamos que brindamos: ");
 for(let prestamos of cuotas){
     console.log("el valor del prestamo es de " + prestamos.monto + ", las cuotas son de " + prestamos.cuota + 
@@ -39,13 +75,7 @@ for(let prestamos of cuotas){
         alert("el monto que deve devolver es de " + prestamos.devolucion);
     }
 }
-
-
-
-
-
-
-
+*/
 
 
 
