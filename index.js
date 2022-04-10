@@ -1,9 +1,11 @@
-// 4TO DESAFIO
+// 5TO DESAFIO
 
 
-
+let container = document.querySelector(".container");
 
 let cuotas = [];
+
+let mapeo2 = [];
 
 class Banco {
     constructor(monto, cuota, devolucion){
@@ -20,27 +22,53 @@ const opcion3 = new Banco("30000", "36", "40000");
 
 cuotas.push(opcion1, opcion2, opcion3);
 
+let decision;
+
 
 const prestamos = () => {
-    cuotas.forEach((cuota) => {
-        console.log(`El valor del prestamo es de: $${cuota.monto} y el valor a devolver es de: $${cuota.devolucion}`);
-    });
+    let texto = "";
+    for(const p of cuotas){
+        texto += `$${p.monto} - $${p.devolucion} \n`;
+    }
+    let usuario = prompt(`Ingrese el valor que desea de prestamo, el siguiente es el total que tiene que devolver \n${texto}`);
+
+    return usuario;
 };
 
 
-const valorFinal = () => {
-    let usuario = prompt("Ingrese el valor del prestamo que desea");
-    for(const cuota of cuotas){
-    
-        if(usuario == cuota.monto){
-           console.log(`El valor que tiene que devolver es de: $${cuota.devolucion}`);
-        }
-    }
+
+
+const eleccion = () => {
+    let elejido = cuotas.find((e) => e.monto === decision);
 }
 
 
-prestamos();
-valorFinal();
+mapeo2.push(eleccion);
+
+
+const mostrar = () => {
+    const div = document.createElement("div");
+    div.className = "caja";
+    container.appendChild(div);
+    
+    let mapeo = mapeo2.map((e) => `<div>
+    <h3>El valor del prestamo es de $${e.monto}</h3>
+    <h3>El valor a devolver es de $${e.devolucion}</h3>
+    </div>`);
+
+    div.innerHTML = mapeo.join("");
+    
+}
+
+
+
+
+
+
+decision = prestamos();
+eleccion();
+mostrar();
+
 
 
 
