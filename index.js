@@ -7,6 +7,7 @@ let cuotas = [];
 
 let mapeo2 = [];
 
+
 class Banco {
     constructor(monto, cuota, devolucion){
         this.monto = monto;
@@ -22,7 +23,7 @@ const opcion3 = new Banco("30000", "36", "40000");
 
 cuotas.push(opcion1, opcion2, opcion3);
 
-let decision;
+
 
 
 const prestamos = () => {
@@ -40,25 +41,27 @@ const prestamos = () => {
 
 const eleccion = () => {
     let elejido = cuotas.find((e) => e.monto === decision);
+
+    return elejido;
 }
 
 
 mapeo2.push(eleccion);
 
 
-const mostrar = () => {
+const mostrar = (ele) => {
     const div = document.createElement("div");
     div.className = "caja";
     container.appendChild(div);
     
-    let mapeo = mapeo2.map((e) => `<div>
-    <h3>El valor del prestamo es de $${e.monto}</h3>
-    <h3>El valor a devolver es de $${e.devolucion}</h3>
-    </div>`);
+    div.innerHTML = `<div>
+    <h3>El valor del prestamo es de $${ele.monto}</h3>
+    <h3>El valor a devolver es de $${ele.devolucion}</h3>
+    </div>`};
 
-    div.innerHTML = mapeo.join("");
     
-}
+    
+
 
 
 
@@ -66,8 +69,8 @@ const mostrar = () => {
 
 
 decision = prestamos();
-eleccion();
-mostrar();
+let ele = eleccion();
+mostrar(ele);
 
 
 
