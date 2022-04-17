@@ -1,8 +1,40 @@
-// 5TO DESAFIO
+// 6TO DESAFIO
 
 
-let container = document.querySelector(".container");
+let valorUsuario = document.querySelector("#seleccionarPrestamo");
+let valorMostrar = document.querySelector("#valorFinal");
 
+
+
+
+valorUsuario.addEventListener("change", () => {
+    let valor = valorUsuario.value;
+   
+    valorMostrar.innerHTML = `El monto que tiene que devolver, con el porcentaje incluido es de: ${valor * 1.21}`
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 let cuotas = [];
 
 let mapeo2 = [];
@@ -40,7 +72,7 @@ const prestamos = () => {
 
 
 const eleccion = () => {
-    let elejido = cuotas.find((e) => e.monto === decision);
+    let elejido = cuotas.find((e) => e.monto == decision);
 
     return elejido;
 }
@@ -73,40 +105,19 @@ let ele = eleccion();
 mostrar(ele);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-console.log("Estos son los prestamos que brindamos: ");
-for(let prestamos of cuotas){
-    console.log("el valor del prestamo es de " + prestamos.monto + ", las cuotas son de " + prestamos.cuota + 
-     ", y el monto a devoler es de " + prestamos.devolucion);
-}
-
-
-let usuario = prompt("Escriba el monto que desee de prestamo");
-for(let prestamos of cuotas){
-    
-    if(usuario == prestamos.monto){
-        alert("el monto que deve devolver es de " + prestamos.devolucion);
-    }
-}
 */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
