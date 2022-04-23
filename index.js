@@ -11,6 +11,8 @@ valorUsuario.addEventListener("change", () => {
     let valor = valorUsuario.value;
    
     valorMostrar.innerHTML = `El monto que tiene que devolver, con el porcentaje incluido es de: ${valor * 1.21}`
+
+    localStorage.setItem("info", JSON.stringify(valor * 1.21));
     
 })
 
