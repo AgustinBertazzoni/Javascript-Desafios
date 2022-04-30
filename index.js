@@ -1,23 +1,29 @@
-// 6TO DESAFIO
+// 8VO DESAFIO
 
 
 let valorUsuario = document.querySelector("#seleccionarPrestamo");
 let valorMostrar = document.querySelector("#valorFinal");
 
 
-function calcular () {
+
+function calcular() {
     valorUsuario.addEventListener("change", () => {
         let valor = valorUsuario.value;
-       
+
         valorMostrar.innerHTML = `El monto que tiene que devolver, con el porcentaje incluido es de: ${valor * 1.21}`;
-    
+
         localStorage.setItem("info", JSON.stringify(valor * 1.21));
 
-        valor === "0" ? alert("Debe ingresar un numero que no sea 0") : valor = valorUsuario.value;
-    
+        valor === "0" ? Swal.fire({
+            title: "Error!",
+            text: "Debe ingresar un numero que no sea 0",
+            icon: "error",
+            confirmButtonText: "OK"
+        }) : valor = valorUsuario.value;
+
     })
 
-    
+
 }
 
 
@@ -27,6 +33,9 @@ calcular()
 
 
 
+
+
+/**/
 
 
 
