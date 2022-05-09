@@ -1,0 +1,57 @@
+[
+    {
+        "id_currency": 1,
+        "iso": "COP",
+        "name": "Pesos  Argentinos"
+    },
+    {
+        "id_currency": 2,
+        "iso": "ARS",
+        "name": "Pesos Colombianos"
+    },
+    {
+        "id_currency": 3,
+        "iso": "USD",
+        "name": "Dólares Americanos"
+    },
+    {
+        "id_currency": 4,
+        "iso": "MXN",
+        "name": "Pesos Mexicanos"
+    },
+    {
+        "id_currency": 5,
+        "iso": "EUR",
+        "name": "Euros"
+    },
+    {
+        "id_currency": 7,
+        "iso": "DOP",
+        "name": "Peso Dominicano"
+    },
+    {
+        "id_currency": 8,
+        "iso": "CLP",
+        "name": "Peso Chileno"
+    },
+    {
+        "id_currency": 9,
+        "iso": "PEN",
+        "name": "Nuevo Sol"
+    },
+    {
+        "id_currency": 10,
+        "iso": "BOB",
+        "name": "Boliviano"
+    },
+    {
+        "id_currency": 11,
+        "iso": "CRC",
+        "name": "Colón Costarricense"
+    },
+    {
+        "id_currency": 12,
+        "iso": "GTQ",
+        "name": "Quetzal"
+    }
+]

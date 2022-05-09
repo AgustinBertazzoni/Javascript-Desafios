@@ -1,16 +1,38 @@
-// 8VO DESAFIO
+// 9NO DESAFIO
+
+//Traer los datos
+
+const monedas = document.querySelector("#monedas");
 
 
-let valorUsuario = document.querySelector("#seleccionarPrestamo");
-let valorMostrar = document.querySelector("#valorFinal");
+// fetch("apis.json").then( (response) => response.json()).then( (name) => {
+//     const data = name.map((name) => `<li>${name.name}</li>`)
+//     monedas.innerHTML = `<ul></ul>`
+// });
 
+fetch("./apis.json")
+.then( (respuesta) => respuesta.json() )
+.then( (data) => {
+    data.forEach( (el) => {
+        monedas.innerHTML += `<option>${el.name}</option>`
+    });
+});
+
+
+
+
+//Calcular
+const valorUsuario = document.querySelector("#seleccionarPrestamo");
+const valorMostrar = document.querySelector("#valorFinal");
+const botonCalcular = document.querySelector("#boton");
 
 
 function calcular() {
-    valorUsuario.addEventListener("change", () => {
+    botonCalcular.addEventListener("click", () => {
         let valor = valorUsuario.value;
 
-        valorMostrar.innerHTML = `El monto que tiene que devolver, con el porcentaje incluido es de: ${valor * 1.21}`;
+        valorMostrar.innerHTML = `El monto que tiene que devolver, con el IVA incluido, es de: $${(valor * 1.21).toFixed(2)}<br/> <br/> Tambien tiene la opcion de devolver en 12 cuotas de: $${(valor * 1.21 / 12).toFixed(2)} `;
+
 
         localStorage.setItem("info", JSON.stringify(valor * 1.21));
 
@@ -27,15 +49,13 @@ function calcular() {
 }
 
 
-calcular()
+calcular();
 
 
 
 
 
 
-
-/**/
 
 
 

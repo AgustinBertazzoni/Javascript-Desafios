@@ -10,18 +10,25 @@
 <body>
     
 
-    <h1>PRESTAMOS BANCARIOS</h1>
+    <h1>PRESTAMOS BANCARIOS</h1>    
 
-    
+    <h3>Seleccione el tipo de moneda que desee</h3>
+    <div class="select">
+        <select name="select" id="monedas">
+            <option selected>Monedas</option>
+        </select>
+    </div>
 
     <h3>Escriba el monto que desea como prestamo</h3>
 
     <p class="subtitulo">Todos los prestamos bancarios tienen un porcentaje del 21% a la hora de la devolucion</p>
 
     <div class="seleccion">
-        <input type="text" id="seleccionarPrestamo">
+        <input type="text" id="seleccionarPrestamo" placeholder="Ingrese un monto">
     </div>
-
+    <div class="seleccion">
+        <button id="boton">Calcular</button>
+    </div>
     
 
     
