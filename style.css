@@ -66,3 +66,8 @@ select{
     font-weight: bold;
     margin-top: 40px;
 }
+
+.valorMoneda{
+    font-size:28px;
+    font-weight: bold;
+}

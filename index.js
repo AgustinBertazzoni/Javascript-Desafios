@@ -25,13 +25,14 @@ fetch("./apis.json")
 const valorUsuario = document.querySelector("#seleccionarPrestamo");
 const valorMostrar = document.querySelector("#valorFinal");
 const botonCalcular = document.querySelector("#boton");
+const valorMoneda = document.querySelector("#monedas");
 
 
 function calcular() {
     botonCalcular.addEventListener("click", () => {
         let valor = valorUsuario.value;
 
-        valorMostrar.innerHTML = `El monto que tiene que devolver, con el IVA incluido, es de: $${(valor * 1.21).toFixed(2)}<br/> <br/> Tambien tiene la opcion de devolver en 12 cuotas de: $${(valor * 1.21 / 12).toFixed(2)} `;
+        valorMostrar.innerHTML = `El monto que tiene que devolver, con el IVA incluido, es de: <span class="valorMoneda">$${(valor * 1.21).toFixed(2)}</span> de la moneda <span class="valorMoneda">${valorMoneda.value}</span><br/> <br/> Tambien tiene la opcion de devolver en 12 cuotas de:<span class="valorMoneda"> $${(valor * 1.21 / 12).toFixed(2)}</span> `;
 
 
         localStorage.setItem("info", JSON.stringify(valor * 1.21));
